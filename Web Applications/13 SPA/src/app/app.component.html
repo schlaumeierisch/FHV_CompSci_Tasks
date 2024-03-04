@@ -1,0 +1,46 @@
+<h1>Task 19 - SPA-Web-Applikation by Matthias Meier</h1>
+<h3>Input</h3>
+
+<p style="font-weight: bold;">Select date:</p>
+<mat-form-field>
+  <mat-label>date</mat-label>
+  <input matInput [matDatepicker]="datePicker" (dateChange)="getHostInfo($event)">
+  <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+  <mat-datepicker #datePicker></mat-datepicker>
+</mat-form-field>
+
+<br>
+<hr>
+
+<h3>Selected Date with Server Response (Host Info)</h3>
+<!-- info text disappears after date selection -->
+<p *ngIf="!serverResponse">Result appears only when a date has been selected and no error occurs during the server request.</p>
+
+<!-- result appears after date selection -->
+<ul *ngIf="serverResponse">
+  <!-- date in correct form (e.g. 12. Jänner 2022) -->
+  <li style="font-weight: bold;">Selected Date:</li>
+  <ul>
+    <li>{{ (date | date: 'dd. MMMM yyyy') || '- not selected yet -' }}</li>
+  </ul>
+
+  <div>
+    <!-- list of IP addresses & current date/time -->
+    <li style="font-weight: bold;">IP Addresses:</li>
+    <ul>
+      <li *ngFor="let ip of serverResponse.ip">{{ ip }}</li>
+    </ul>
+
+    <!-- server date -->
+    <li style="font-weight: bold;">Server Date:</li>
+    <ul>
+      <li>{{ (serverResponse.date | date: 'dd. MMMM yyyy') || '/' }}</li>
+    </ul>
+
+    <!-- server time -->
+    <li style="font-weight: bold;">Server Time:</li>
+    <ul>
+      <li>{{ (serverResponse.time | date: 'HH:mm:ss') || '/' }}</li>
+    </ul>
+  </div>
+</ul>

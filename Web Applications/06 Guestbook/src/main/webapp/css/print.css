@@ -1,0 +1,20 @@
+* {
+	/* Internet Explorer 4-8 and 9 */
+	filter: Gray();
+
+	/* Internet Explorer 10, Chrome 17, Firefox 3.5, Safari 5.2 and Opera 11.6 */
+	filter: url("#grayscale");
+
+	/* Future proof */
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.sidenav {
+	display: none;
+}
+
+.main {
+	margin-left: 0;
+	font-size: smaller;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "task17ajax",
+  "version": "1.0.0",
+  "description": "Assignment 11, Task 17 - Ajax (Character Counter)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Matthias Meier",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2"
+  }
+}

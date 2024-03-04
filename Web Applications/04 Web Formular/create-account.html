@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Sports Club Altenstadt">
+   <meta name="keywords" content="sports, tennis, football, altenstadt, austria, register, account">
+   <meta name="author" content="Matthias Meier">
+   <title>Sports Club Altenstadt - TSV Altenstadt</title>
+
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" media="print" href="css/print.css">
+</head>
+
+<body>
+   <!-- sidebar -->
+   <div class="sidenav">
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="Sports Club Altenstadt" width="150px"></a>
+      <a href="index.html">Home</a>
+      <a href="tsv-altenstadt.html">TSV Altenstadt</a>
+      <a href="tc-altenstadt.html">TC Altenstadt</a>
+      <a href="create-account.html" class="active">Create Account</a>
+      <a href="mailto: matthias.meier97@hotmail.com"><img src="img/email.png" class="icon" alt="E-Mail"
+            width="30px">Contact</a>
+   </div>
+
+   <div class="main">
+      <div class="register-form">
+         <h1>Create Account</h1>
+
+         <!-- description -->
+         <h2>Registration Form</h2>
+
+         <form action="mailto:matthias.meier97@hotmail.com" method="POST" enctype="text/plain">
+
+            <!-- personal data -->
+            <h3>Personal Data</h3>
+            <p>
+               <label for="first-name">First Name</label><br>
+               <input type="text" placeholder="Enter First Name" name="first-name" id="first-name">
+            </p>
+            <p>
+               <label for="last-name">Last Name</label><br>
+               <input type="text" placeholder="Enter Last Name" name="last-name" id="last-name">
+            </p>
+            <p>
+               <label for="gender">Gender</label><br>
+               <input type="radio" name="gender" id="male" value="male" checked>
+               <label for="male" style="font-size: 14px">Male</label>
+
+               <input type="radio" name="gender" id="female" value="female">
+               <label for="female" style="font-size: 14px">Female</label>
+
+               <input type="radio" name="gender" id="diverse" value="diverse">
+               <label for="diverse" style="font-size: 14px">Diverse</label>
+            </p>
+            <p>
+               <label for="address">Address</label><br>
+               <textarea placeholder="Enter Address" name="address" id="address" rows="3"></textarea>
+            </p>
+            <p>
+               <label for="countries">Country</label><br>
+               <select name="countries" id="countries">
+                  <option value="austria">Austria</option>
+                  <option value="germany">Germany</option>
+                  <option value="switzerland">Switzerland</option>
+                  <option value="other">Other</option>
+               </select>
+            </p>
+            <hr>
+
+            <!-- account data -->
+            <h3>Account Data</h3>
+            <p>
+               <label for="user-id">User-ID</label><br>
+               <input type="text" placeholder="Enter User-ID" name="user-id" id="user-id"></input>
+            </p>
+            <p>
+               <label for="e-mail">E-Mail</label><br>
+               <input type="text" placeholder="Enter E-Mail" name="e-mail" id="e-mail"></input>
+            </p>
+            <p>
+               <label for="password">Password</label><br>
+               <input type="password" placeholder="Enter Password" name="password" id="password"></input>
+            </p>
+            <p>
+               <label for="confirm-password">Confirm Password</label><br>
+               <input type="password" placeholder="Confirm Password" name="confirm-password"
+                  id="confirm-password"></input>
+            </p>
+            <hr>
+
+            <!-- additionals -->
+            <h3>Additionals</h3>
+            <p>
+               <label for="department">Department</label><br>
+               <select name="departments" id="departments" multiple size="2">
+                  <option value="tennis">Tennis</option>
+                  <option value="football">Football</option>
+               </select>
+            </p>
+            <p>
+               <label for="permission">Permission Level</label><br>
+               <input type="checkbox" name="permission" id="athlete" value="athlete" checked>
+               <label for="athlete" style="font-size: 14px">Athlete</label>
+
+               <input type="checkbox" name="permission" id="department-head" value="department-head">
+               <label for="department-head" style="font-size: 14px">Department Head</label>
+
+               <input type="checkbox" name="permission" id="admin" value="admin">
+               <label for="admin" style="font-size: 14px">Admin</label>
+            </p>
+
+            <p>
+               <input type="reset" name="reset" , id="reset" value="Reset">
+               <input type="submit" name="submit" id="submit" value="Create Account">
+            </p>
+         </form>
+      </div>
+   </div>
+</body>
+
+</html>
