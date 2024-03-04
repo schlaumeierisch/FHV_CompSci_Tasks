@@ -1,0 +1,21 @@
+equalityChecker(↓ Integer[] values1, ↓ Integer[] values2, ↑ Real isEqual, ↑ Real isUnequal)
+	Integer counter = 0
+	Integer equalValues = 0
+	Integer unequalValues = 0
+
+	while (counter < values1.length) do
+		if ((values1[counter] == values2[counter]) || 
+		((values1[counter] == 0) || (values2[counter] == 0)) || 
+		((values1[counter] + values2[counter]) == 0)) then
+			// write("Die Werte values1["counter"] (= "values1[counter]") und values2["counter"] (= "values2[counter]") stimmen überein.")
+			equalValues = equalValues + 1
+		else
+			// write("Die Werte values1["counter"] (= "values1[counter]") und values2["counter"] (= "values2[counter]") stimmen nicht überein.")
+			unequalValues = unequalValues + 1
+		end if
+		counter = counter + 1
+	end while
+
+	isEqual = ((Real) equalValues * 100)/values1.length
+	// isUnequal = ((Real) unequalValues * 100)/values2.length
+end equalityChecker

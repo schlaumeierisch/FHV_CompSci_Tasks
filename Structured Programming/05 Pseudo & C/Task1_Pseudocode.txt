@@ -1,0 +1,25 @@
+whichValuesAreMissing (↓ Integer[] values[], ↑ Integer missingValue)
+	Integer i = 0
+	Integer n = values.length
+	Integer counter = 0
+	Boolean isValueMissing = true
+	
+	while (i <= n) do
+		while ((counter <= n) && (isValueMissing == true)) do
+			if (values[counter] == i) then
+				isValueMissing = false
+			else
+				isValueMissing = true
+			end if
+			
+			counter = counter + 1
+		end while
+		
+		if (isValueMissing == true) then
+			missingValue = i
+		end if
+		
+		counter = 0
+		i = i + 1
+	end while
+end whichValuesAreMissing

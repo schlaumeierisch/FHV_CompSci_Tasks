@@ -1,0 +1,17 @@
+deleteNegativeValues(↓ Integer[] mixedValues[], ↑ Integer[] positiveValues[mixedValues.length], ↑ Integer positiveValuesAmount)
+	Integer iM = 0
+	Integer iP = 0
+	Integer counter = 0
+	
+	while (counter < mixedValues.length) do
+		if (mixedValues[iM] > -1) then
+			positiveValues[iP] = mixedValues[iM]
+			iP = iP + 1
+			positiveValuesAmount = positiveValuesAmount + 1
+		end if
+		iM = iM + 1
+		counter = counter + 1
+	end while
+
+	write("Das neue Feld positiveValues[] beinhaltet "+ positiveValuesAmount +" positive Zahlen")
+end deleteNegativeValues

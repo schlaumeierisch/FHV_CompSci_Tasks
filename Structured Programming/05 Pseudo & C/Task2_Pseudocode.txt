@@ -1,0 +1,23 @@
+MinimaMaximaDetermination(↓ Integer[] values, ↓↑ Integer[] maxima, ↓↑ Integer[] minima)
+	Integer i = 1
+	Integer iMax = 0
+	Integer iMin = 0
+
+	while (i < (length - 1)) do
+		if ((values[i] > values[i - 1]) && (values[i] > values[i + 1])) then
+			if (iMax < maxima.length) then
+				maxima[iMax] = values[i]
+				iMax = iMax + 1
+			end if
+		end if
+		
+		if ((values[i] < values[i - 1]) && (values[i] < values[i + 1])) then
+			if (iMin < minima.length) then
+				minima[iMin] = values[i]
+				iMin = iMin + 1
+			end if
+		end if
+		
+		i = i + 1
+	end while
+end MinimaMaximaDetermination

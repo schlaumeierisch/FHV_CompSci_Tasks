@@ -1,0 +1,136 @@
+Encryption(↓ String text, ↑ String encodedText)
+	Integer pos = 0
+	Integer encodedWordsCounter = 0
+	encodedText = ""
+
+	while (pos < text.length) do
+		ExtractWordOrDelimiter(↓text, ↓↑pos, ↑wordOrDelimiter)
+		EncodeWordOrDelimiter(↓wordOrDelimiter, ↓↑encodedText, ↓↑encodedWordsCounter)
+	end while
+end Encryption()
+
+
+ExtractWordOrDelimiter(↓ String text, ↓↑ Integer pos, ↑ String wordOrDelimiter)
+	if (isDelimiter(↓pos, ↓text)) then
+		String delimiter = ""
+		ExtractDelimiter(↓text, ↓↑pos, ↑delimiter)
+		
+		wordOrDelimiter = delimiter
+	else
+		String word = ""
+		ExtractWord(↓text, ↓↑pos, ↑word)
+		
+		wordOrDelimiter = word
+	end if
+	
+end ExtractWordOrDelimiter
+
+
+isDelimiter(↓ Integer pos, ↓ String text): Boolean
+	if (text[pos] == ' ') then
+		isDelimiter = true
+	
+	else if (text[pos] == ',') then
+		isDelimiter = true
+		
+	else if (text[pos] == '.') then
+		isDelimiter = true
+		
+	else 
+		isDelimiter = false
+		
+	end if
+end isDelimiter
+
+
+ExtractDelimiter(↓ String text, ↓↑ Integer pos, ↑ String delimiter)
+	delimiter = text[pos]
+	pos = pos + 1
+	
+	while ((pos < text.length) and (text[pos] == delimiter)
+		pos = pos + 1
+	end while
+	
+end ExtractDelimiter
+
+
+ExtractWord(↓ String text, ↓↑ Integer pos, ↑ String word)
+	word = ""
+	
+	while ((pos < text.length) and (not isDelimiter(↓pos, ↓text))) do
+		word = word + text[pos]
+		pos = pos + 1
+	end while
+end ExtractWord
+
+
+EncodeWordOrDelimiter(↓wordOrDelimiter, ↓↑encodedText, ↓↑encodedWordsCounter)
+	if (isDelimiter(0, ↓wordOrDelimiter)) then
+		String encodedDelimiter = ""
+		EncodeDelimiter(↓delimiter, ↑encodedDelimiter)
+		
+		encodedText = encodedText + encodedDelimiter
+		
+	else
+		if (encodedWordsCounter < 5) then
+			String encodedWord = ""
+			EncodeWord(↓word, ↑encodedWord)
+			
+			encodedText = encodedText + encodedWord
+			encodedWordsCounter = encodedWordsCounter + 1
+		else
+			encodedText = encodedText + word
+			encodedWordsCounter = 0
+		end if
+	end if
+end EncodeWordOrDelimiter
+
+
+EncodeDelimiter(↓ String delimiter, ↑ String encodedDelimiter)
+	if (delimiter[0] == ',') then
+		encodedDelimiter = "@"
+		
+	else if (delimiter[0] == '.') then
+		encodedDelimiter = "#"
+		
+	else if (delimiter[0] == ' ') then
+		Integer randomNumber = Random(↓3)
+		
+		if (randomNumber == 0) then
+			encodedDelimiter = "?"
+		else if (randomNumber == 1) then
+			encodedDelimiter = "%"
+		else if (randomNumber == 2) then
+			encodedDelimiter = "&"
+		end if
+	end if
+end EncodeDelimiter
+
+
+EncodeWord(↓ String word, ↑ String encodedWord)
+	if (word == "nretsO") then
+		encodedWord = "heute"
+		
+	else if (word == "402U") then
+		encodedWord = "Bahnhof"
+		
+	else if (word == "hci") then
+		encodedWord = "alle"
+		
+	else
+		ReverseWord(↓word, ↑reversedWord)
+		encodedWord = reversedWord
+	end if
+end EncodeWord
+
+
+ReverseWord(↓word, ↑reversedWord)
+	reversedWord = ""
+	Integer i = 1
+	
+	while (i <= (word.length)) do
+		reversedWord = reversedWord + word[word.length - i]
+	
+		i = i + 1
+	end while
+end switchWord

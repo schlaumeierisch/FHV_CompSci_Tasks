@@ -1,0 +1,43 @@
+VowelOccurencies
+	String text = "AUTOBAHNEN"
+	
+	Integer n = text.length
+	Integer letterDigit = 0
+	Integer letterA = 0
+	Integer letterE = 0
+	Integer letterI = 0
+	Integer letterO = 0
+	Integer letterU = 0
+	Integer counter = 0
+	
+	while (counter < n) do
+		if (((text[letterDigit]) == ('A')) || ((text[letterDigit]) == ('a'))) then
+			letterA = letterA + 1
+		end if
+		
+		if (((text[letterDigit]) == ('E')) || ((text[letterDigit]) == ('e'))) then
+			letterE = letterE + 1
+		end if 
+		
+		if (((text[letterDigit]) == ('I')) || ((text[letterDigit]) == ('i'))) then
+			letterI = letterI + 1
+		end if
+		
+		if (((text[letterDigit]) == ('O')) || ((text[letterDigit]) == ('o'))) then
+			letterO = letterO + 1
+		end if
+		
+		if (((text[letterDigit]) == ('U')) || ((text[letterDigit]) == ('u'))) then
+			letterU = letterU + 1
+		end if
+		
+		letterDigit = letterDigit + 1
+		counter = counter + 1
+	end while
+	
+	Real freqA = ((Real) letterA * 100)/n
+	Real freqE = ((Real) letterE * 100)/n
+	Real freqI = ((Real) letterI * 100)/n
+	Real freqO = ((Real) letterO * 100)/n
+	Real freqU = ((Real) letterU * 100)/n
+end VowelOccurencies

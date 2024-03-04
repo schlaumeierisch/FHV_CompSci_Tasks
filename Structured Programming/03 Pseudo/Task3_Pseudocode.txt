@@ -1,0 +1,16 @@
+RussianPeasantMultiplication(↓multiplier, ↓multiplicand, ↑result)
+	Integer multiplier = 16
+	Integer multiplicand = 30
+	Integer result = 0
+
+	while (multiplier > 1) do
+		if ((multiplier % 2) != 0) then
+			result = result + multiplicand
+		end if
+	
+		multiplier = multiplier / 2
+		multiplicand = multiplicand * 2
+	end while
+	
+	result = result + multiplicand
+end RussianPeasantMultiplication

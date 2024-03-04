@@ -1,0 +1,11 @@
+checkValidity(↓ Integer values[], ↑ Integer checksum)
+	Integer counter = 0
+	Integer sum = 0
+
+	while (counter < values.length) do
+		sum = sum + values[counter]
+		counter = counter + 1
+	end while
+	
+	checksum := sum % 256
+end checkValidity

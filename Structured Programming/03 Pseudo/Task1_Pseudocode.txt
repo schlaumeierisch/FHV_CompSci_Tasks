@@ -1,0 +1,31 @@
+palindromeChecker
+	String word = "REITTIER"
+	
+	Integer wordLength = word.length
+	Integer halfWord = word.length/2
+	Integer counter = 0
+	Integer firstLetterDigit = 0
+	Integer lastLetterDigit = word.length - 1
+	
+	Boolean isPalindrome = true
+
+	while ((counter < halfWord) and (isPalindrome == true)) do
+		Character firstLetter = word[firstLetterDigit]
+		Character lastLetter = word[lastLetterDigit]
+		
+		if (firstLetter == lastLetter) then
+			firstLetterDigit = firstLetterDigit + 1
+			lastLetterDigit = lastLetterDigit - 1
+			counter = counter + 1
+			isPalindrome = true
+		else
+			isPalindrome = false
+		end if
+	end while
+	
+	if (isPalindrome == true) then
+		write("Beim Wort "+ word +" handelt es sich um ein Palindrom.")
+	else
+		write("Beim Wort "+ word +" handelt es sich nicht um ein Palindrom.")
+	end if
+end palindromeChecker

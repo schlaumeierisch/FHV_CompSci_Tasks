@@ -1,0 +1,46 @@
+dayCounter(↓ Integer day, ↓ String month, ↓ Integer year, ↑ Integer dayOfYear)
+	String months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+	Integer[] monthDays[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+	Integer i = 0
+	Integer counter = 0
+	Boolean isLeapYear = true
+
+	while ((months[i] != month) or (counter < 12) do
+		i = i + 1
+		counter = counter + 1
+	end while
+	// feststellen, um welchen Monat es sich handelt (months[?])
+	
+	if (i < 12) then
+		if (year % 4 == 0) then
+			isLeapYear = true
+			if (year % 100 == 0) then
+				isLeapYear = false
+				if (year % 400 == 0) then
+					isLeapYear = true
+				end if
+			end if
+		else
+			isLeapYear = false
+		end if
+		// feststellen, ob es sich um ein Schaltjahr handelt
+		
+		if ((day <= monthDays[i]) && (year > -1) && ((isLeapYear == false) && (months == "Feb") && (day < 29)) then
+			dayOfYear = dayOfYear + day
+			
+			while (i > 0) do
+				i = i - 1
+				dayOfYear = dayOfYear + monthDays[i]
+			end while
+			// alle Tage der vorherigen Monate monthDays[0] bis monthDays[i] zusammenzählen
+			
+			if (isLeapYear == false) then
+				dayOfYear = dayOfYear - 1
+			end if
+		else
+			write("FEHLER!")
+		end if
+	else
+		write("FEHLER!")
+	end if
+end dayCounter
