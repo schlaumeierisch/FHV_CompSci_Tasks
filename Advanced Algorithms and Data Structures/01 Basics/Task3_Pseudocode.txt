@@ -1,0 +1,64 @@
+Quizmaster
+
+	Integer n = 7
+	Integer m = 3
+	
+	Integer candidate1 = 1
+	Integer candidate2 = 2
+	Integer candidate3 = 3
+	Integer candidate4 = 4
+	Integer candidate5 = 5
+	Integer candidate6 = 6
+	Integer candidate7 = 7
+	
+	Integer currentCandidate = 0
+	
+	Integer counter = 0
+	
+	while not (currentCandidate == candidate4) do
+		currentCandidate := currentCandidate + m
+		
+		if (currentCandidate == 8)
+			currentCandidate := 1
+		end if
+		
+		if (currentCandidate == 9)
+			currentCandidate := 2
+		end if
+		
+		if (currentCandidate == 10)
+			currentCandidate == 3)
+		end if
+		
+		
+		if (currentCandidate == candidate1)
+			write("Kandidat 1 ist leider ausgeschieden")
+		end if
+		
+		if (currentCandidate == candidate2)
+			write("Kandidat 2 ist leider ausgeschieden")
+		end if
+		
+		if (currentCandidate == candidate3)
+			write("Kandidat 3 ist leider ausgeschieden")
+		end if
+		
+		if (currentCandidate == candidate5)
+			write("Kandidat 5 ist leider ausgeschieden")
+		end if
+		
+		if (currentCandidate == candidate6)
+			write("Kandidat 6 ist leider ausgeschieden")
+		end if
+		
+		if (currentCandidate == candidate7)
+			write("Kandidat 7 ist leider ausgeschieden")
+		end if
+		
+		counter := counter + 1
+		write("Ein Kandidat weniger... Es sind nur noch " n - counter " Kandidaten dabei!")
+	end while
+	
+	write("Kandidat 4 hat gewonnen!")
+	
+end Quizmaster

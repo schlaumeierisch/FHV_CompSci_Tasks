@@ -1,0 +1,100 @@
+NimGame
+	Integer row1 = 1
+	Integer row2 = 2
+	Integer row3 = 3
+	Integer selectedRow = 0
+	
+	Integer row1Coins = 5
+	Integer row2Coins = 4
+	Integer row3Coins = 3
+	Integer totalCoins = row1Coins + row2Coins + row3Coins
+	Integer selectedCoins = 0
+	Boolean CoinsLeft = true
+
+	Integer Player1 = 1
+	Integer Player2 = 2
+	Integer currentPlayer = 1
+
+	// Für die Auswahl der Münzen wähle ich "Player1CoinSelection" bzw. "Player2CoinSelection"
+	// Für die Auswahl der Reihe wähle ich "Player1RowSelection" bzw. "Player2RowSelection"
+	
+	while (allCoins > 0) do
+		if (currentPlayer == 1) then
+			Player1CoinSelection
+			Player1RowSelection
+			
+			while ((selectedRow > 3) or (selectedRow < 0) or (CoinsLeft(selectedRow) == false)) do
+				Player1RowSelection
+			end while
+			
+			if (selectedRow == row1) then
+				while ((selectedCoins > row1Coins) or (selectedCoins < 0)) do
+					Player1CoinSelection
+				end while
+				
+				row1Coins = row1Coins - selectedCoins
+			end if
+			
+			if (selectedRow == row2) then
+				while ((selectedCoins > row2Coins) or (selectedCoins < 0)) do
+					Player1CoinSelection
+				end while
+				
+				row2Coins = row2Coins - selectedCoins
+			end if
+			
+			if (selectedRow == row3) then
+				while ((selectedCoins > row3Coins) or (selectedCoins < 0)) do
+					Player1CoinSelection
+				end while
+				
+				row3Coins = row3Coins - selectedCoins
+			end if
+			
+			currentPlayer = currentPlayer + 1
+			
+			totalCoins = totalCoins - selectedCoins
+			if (totalCoins == 0) then
+				write("Player 1 is the winner!")
+			end if
+		else
+			Player2CoinSelection
+			Player2RowSelection
+			
+			while ((selectedRow > 3) or (selectedRow < 0) or (CoinsLeft(selectedRow) == false)) do
+				Player2RowSelection
+			end while
+			
+			if (selectedRow == row1) then
+				while ((selectedCoins > row1Coins) or (selectedCoins < 0)) do
+					Player2CoinSelection
+				end while
+				
+				row1Coins = row1Coins - selectedCoins
+			end if
+			
+			if (selectedRow == row2) then
+				while ((selectedCoins > row2Coins) or (selectedCoins < 0)) do
+					Player2CoinSelection
+				end while
+				
+				row2Coins = row2Coins - selectedCoins
+			end if
+			
+			if (selectedRow == row3) then
+				while ((selectedCoins > row3Coins) or (selectedCoins < 0)) do
+					Player2CoinSelection
+				end while
+				
+				row3Coins = row3Coins - selectedCoins
+			end if
+
+			currentPlayer = currentPlayer -1
+			
+			totalCoins = totalCoins - selectedCoins
+			if (totalCoins == 0) then
+				write("Player 2 is the winner!")
+			end if			
+		end if
+	end while
+end NimGame

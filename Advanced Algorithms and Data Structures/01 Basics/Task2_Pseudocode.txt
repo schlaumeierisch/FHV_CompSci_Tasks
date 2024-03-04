@@ -1,0 +1,16 @@
+multiplication
+
+	Integer a = 4
+	Integer b = 5
+	Integer counter = 0
+	Integer result = 0
+	
+	while (counter < b) do
+		result := result + a
+		
+		counter = counter + 1
+	end while
+
+	write(result)
+	
+end multiplication

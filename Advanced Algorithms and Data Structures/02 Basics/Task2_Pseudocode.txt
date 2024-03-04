@@ -1,0 +1,22 @@
+LeapYearDetermination
+
+	Integer year = 2020
+	Boolean isLeapYear = true
+	
+	if (year % 4 == 0) then
+		isLeapYear = true
+	
+		if (year % 100 == 0) then
+			isLeapYear = false
+			
+			if (year % 400 == 0) then
+				isLeapYear = true
+			end if
+		
+		end if
+		
+	else
+		isLeapYear = false
+	end if
+
+end LeapYearDetermination
